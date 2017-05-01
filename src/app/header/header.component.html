@@ -1,0 +1,37 @@
+<!-- <ul>
+  <li *ngFor="let name of teamName">
+    {{ name }}
+  </li>
+</ul> -->
+
+<div id="wrapper">
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+       <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+           </button>
+           <a class="navbar-brand" href="index.html">footy filter</a>
+       </div>
+       <!-- SIDE NAVIGATION -->
+       <div class="collapse navbar-collapse navbar-ex1-collapse">
+           <ul *ngFor="let team of leagueInfo" class="nav navbar-nav side-nav">
+              <!-- <li><a href="#">{{team.teamName}}</a></li>     -->
+
+               <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
+               <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
+               <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
+               <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
+               <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
+
+           </ul>
+       </div>
+   </nav>
+</div>
+
+<p style="padding-left: 300px">We can make API calls now but I haven't figured out how to put team names in the sidebar nav yet.</p>
+<ul style="padding-left: 300px" *ngFor="let team of leagueInfo">
+  <li><a href="#">{{team.teamName}}</a></li>
+</ul>
