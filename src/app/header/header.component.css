@@ -1,25 +1,5 @@
-.navbar{
-  border-radius: 0;
-}
-
-.navbar-nav > li > a{
-  padding-top: 2px;
-  padding-bottom: 2px;
-  font-size: 11px;
-  /*color: #ffffff;*/
-}
-
-.nav .navbar-nav .side-nav{
-  margin-top: 5px;
-}
-
-#top-header{
-  background-color: #1B9650;
-}
-
-.navbar-brand{
-  font-size: 30px;
-  padding-bottom: 5px;
+.sidebar .nav{
+  margin-top: 0px;
 }
 
 .logo{

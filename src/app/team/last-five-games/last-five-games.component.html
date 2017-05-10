@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header" role="tab" id="headingOne" data-background-color="red">
+    <h5 class="mb-0">
+      <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Previous 5 Games
+      </a>
+    </h5>
+  </div>
+
+  <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div class="card-content">
+      <span *ngFor="let game of lastFive">
+        <p><i><small>Date: {{game.date}},</small> <small>Match Day: {{game.matchday}}</small></i></p>
+        <p>{{game.teamName}}
+          &nbsp; &nbsp;<b>{{game.myresult}} - {{game.rivalresult}}</b>
+          &nbsp; &nbsp;{{game.rival}}</p>
+        <hr>
+      </span>
+    </div>
+  </div>
+</div>
