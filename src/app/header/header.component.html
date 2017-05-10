@@ -1,10 +1,3 @@
-<!-- <ul>
-  <li *ngFor="let name of teamName">
-    {{ name }}
-  </li>
-</ul> -->
-<!--
-<div class="sidebar" data-color="red" data-image="/Users/Tauqir/Desktop/footy-filter/src/assets/theme/img/sidebar-1.jpg"> -->
 <div class="sidebar" data-color="red" data-image="">
     <!--
         Tip 1: You can change the color of the sidebar using: data-color="red | blue | green | orange | red"
@@ -16,9 +9,15 @@
     </a>
   </div>
 
-  <div class="sidebar-wrapper">
-    <ul class="nav">
-        <li class="active">
+  <div class="sidebar-wrapper">  
+    <ul class="nav" *ngFor="let team of teams">
+        <li>
+          <a href="">
+            <img src="{{team.crestURI}}" style="width:20px; height:20px;">
+            {{team.teamName}}
+          </a>
+        </li>
+        <!-- <li class="active">
           <a style="padding-top: 7px;"><img src="assets/icons/Chelsea-FC-icon.png" alt="chelsea"> Chelsea FC </a>
         </li>
         <li>
@@ -42,7 +41,7 @@
           <li><a href="#"> <img src="assets/icons/Hull-City-icon.png" alt="chelsea"> Hull City FC</a></li>
         <li><a href="#"><img src="assets/icons/Swansea-City-icon.png" alt="chelsea"> Swansea City FC</a></li>
         <li><a href="#"> <img src="assets/icons/Middlesbrough-FC-icon.png" alt="chelsea"> Middlesbrough FC</a></li>
-        <li><a href="#"> <img src="assets/icons/Sunderland-AFC-icon.png" alt="chelsea"> Sunderland AFC</a></li>
+        <li><a href="#"> <img src="assets/icons/Sunderland-AFC-icon.png" alt="chelsea"> Sunderland AFC</a></li> -->
     </ul>
   </div>
 </div>

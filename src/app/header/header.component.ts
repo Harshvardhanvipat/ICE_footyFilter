@@ -16,7 +16,7 @@ declare var team: TeamComponent;
 })
 
 export class HeaderComponent implements OnInit {
-  leagueInfo = [];
+  teams = [];
   private _url: string = "http://api.football-data.org/v1/competitions/426/leagueTable";
 
   constructor(private _http: Http) { }
@@ -28,9 +28,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this._http.get(this._url, options)
-    //         .map((res: Response) => res.json())
-    //         .subscribe(res=> this.pushAll(this.leagueInfo, res.standing));
-    // console.log(this.leagueInfo);
+    this._http.get(this._url, options)
+            .map((res: Response) => res.json())
+            .subscribe(res=> this.pushAll(this.teams, res.standing));
+    console.log(this.teams);
   }
 }
