@@ -3,35 +3,51 @@
     {{ name }}
   </li>
 </ul> -->
+<!--
+<div class="sidebar" data-color="red" data-image="/Users/Tauqir/Desktop/footy-filter/src/assets/theme/img/sidebar-1.jpg"> -->
+<div class="sidebar" data-color="red" data-image="">
+    <!--
+        Tip 1: You can change the color of the sidebar using: data-color="red | blue | green | orange | red"
+      Tip 2: you can also add an image using data-image tag
+    -->
+  <div class="logo">
+    <a href="/" class="simple-text">
+      <span><img src="assets/icons/logo.png" style="width: 30px;height: 30px;"></span>   <b>Footy</b>Filter
+    </a>
+  </div>
 
-<div id="wrapper">
-   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-       <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-           </button>
-           <a class="navbar-brand" href="index.html">footy filter</a>
-       </div>
-       <!-- SIDE NAVIGATION -->
-       <div class="collapse navbar-collapse navbar-ex1-collapse">
-           <ul *ngFor="let team of leagueInfo" class="nav navbar-nav side-nav">
-              <!-- <li><a href="#">{{team.teamName}}</a></li>     -->
-
-               <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-               <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
-               <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
-               <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
-               <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
-
-           </ul>
-       </div>
-   </nav>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+        <li class="active">
+          <a style="padding-top: 7px;"><img src="assets/icons/Chelsea-FC-icon.png" alt="chelsea"> Chelsea FC </a>
+        </li>
+        <li>
+          <a href="#"><img src="assets/icons/Tottenham-Hotspur-icon.png" alt="chelsea"> Tottenham Hotspur FC
+          </a>
+        </li>
+        <li><a href="#"><img src="assets/icons/Liverpool-FC-icon.png" alt="chelsea"> Liverpool FC</a></li>
+        <li><a href="#"><img src="assets/icons/Manchester-City-icon.png" alt="chelsea"> Manchester City FC</a></li>
+        <li><a href="#"><img src="assets/icons/Manchester-United-icon.png" alt="chelsea"> Manchester United FC</a></li>
+        <li><a href="#"><img src="assets/icons/Arsenal-FC-icon.png" alt="chelsea"> Arsenal FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Everton-FC-icon.png" alt="chelsea"> Everton FC</a></li>
+        <li><a href="bootstrap-elements.html"> <img src="assets/icons/West-Bromwich-Albion-icon.png" alt="chelsea"> West Bromwich Albion FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Southampton-FC-icon.png" alt="chelsea"> Southampton FC</a></li>
+        <li><a href="#"> <img src="assets/icons/AFC-Bournemouth-icon.png" alt="chelsea"> AFC Bournemouth</a></li>
+        <li><a href="#"><img src="assets/icons/Leicester-City-icon.png" alt="chelsea"> Leicester City FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Stoke-City-icon.png" alt="chelsea"> Stoke City FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Watford-FC-icon.png" alt="chelsea"> Watford FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Burnley-FC-icon.png" alt="chelsea"> Burnley FC</a></li>
+        <li><a href="#"> <img src="assets/icons/West-Ham-United-icon.png" alt="chelsea"> West Ham United FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Crystal-Palace-icon.png" alt="chelsea"> Crystal Palace FC</a></li>
+          <li><a href="#"> <img src="assets/icons/Hull-City-icon.png" alt="chelsea"> Hull City FC</a></li>
+        <li><a href="#"><img src="assets/icons/Swansea-City-icon.png" alt="chelsea"> Swansea City FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Middlesbrough-FC-icon.png" alt="chelsea"> Middlesbrough FC</a></li>
+        <li><a href="#"> <img src="assets/icons/Sunderland-AFC-icon.png" alt="chelsea"> Sunderland AFC</a></li>
+    </ul>
+  </div>
 </div>
 
-<p style="padding-left: 300px">We can make API calls now but I haven't figured out how to put team names in the sidebar nav yet.</p>
-<ul style="padding-left: 300px" *ngFor="let team of leagueInfo">
-  <li><a href="#">{{team.teamName}}</a></li>
-</ul>
+
+<!--
+league table of another competition eg la liga
+get all the team players -->
