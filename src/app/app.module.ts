@@ -17,8 +17,8 @@ import { HeadToHeadComponent } from './team/head-to-head/head-to-head.component'
 import { OneTeamComponent } from './team/one-team/one-team.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HeaderComponent},
-  { path: 'team/:id', component: TeamComponent},
+  // { path: '', component: HeaderComponent},
+  { path: 'team/:name', component: TeamComponent},
   { path: 'leaguetable', component: LeagueTableComponent}
 ]
 

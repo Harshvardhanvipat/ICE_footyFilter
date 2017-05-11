@@ -16,7 +16,7 @@ export class TeamComponent implements OnInit {
     // let id = this.route.snapshot.params['id'];
     // this.teamID = id;
     this.route.params.subscribe((params: Params)=>{
-      let id = params['id'];
+      let id = params['name'];
       this.teamID = id;
     })
   }

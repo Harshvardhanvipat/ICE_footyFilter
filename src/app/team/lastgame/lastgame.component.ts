@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -14,7 +14,7 @@ let options = new RequestOptions({ headers: headers });
 })
 
 
-export class LastGameComponent implements OnInit {
+export class LastGameComponent implements OnChanges {
   private teams = [];
 
   myTeam =  "";
@@ -81,9 +81,14 @@ export class LastGameComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
+  @Input() nameOfTeam: string;
 
+  ngOnChanges() {
+    this.lastGameResult(this.nameOfTeam);
   }
 
-  
+
+
+
+
 }

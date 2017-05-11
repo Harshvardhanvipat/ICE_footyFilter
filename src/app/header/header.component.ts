@@ -38,7 +38,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onSelectedTeam(team){
-    this.router.navigate(['/team', team.id]);
+    this.router.navigate(['/team', team.name]);
   }
 
   ngOnInit() {

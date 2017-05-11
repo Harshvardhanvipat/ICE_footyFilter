@@ -11,8 +11,8 @@
 
   <div class="sidebar-wrapper">
     <ul class="nav" *ngFor="let team of oneTeam">
-        <li>
-          <a (click)="onSelectedTeam(team)">
+        <li (click)="onSelectedTeam(team)" routerLinkActive="active" routerLink="/team/:id">
+          <a>
             <img src="{{team.crest}}" style="width:20px; height:20px;">
             {{team.name}}
           </a>
