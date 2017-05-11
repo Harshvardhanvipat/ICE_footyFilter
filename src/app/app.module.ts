@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { DataComponent } from './data/data.component';
 import { LeagueTableComponent } from './data/league-table/league-table.component';
-import { ApiComponent } from './api/api.component';
 import { TeamComponent } from './team/team.component';
 import { LastGameComponent } from './team/lastgame/lastgame.component';
 import { LastFiveGamesComponent } from './team/last-five-games/last-five-games.component';
@@ -18,6 +17,7 @@ import { HeadToHeadComponent } from './team/head-to-head/head-to-head.component'
 import { OneTeamComponent } from './team/one-team/one-team.component';
 
 const appRoutes: Routes = [
+  { path: '', component: HeaderComponent},
   { path: 'team/:id', component: TeamComponent},
   { path: 'leaguetable', component: LeagueTableComponent}
 ]
@@ -28,7 +28,6 @@ const appRoutes: Routes = [
     HeaderComponent,
     DataComponent,
     LeagueTableComponent,
-    ApiComponent,
     TeamComponent,
     LastGameComponent,
     LastFiveGamesComponent,
