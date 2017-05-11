@@ -10,47 +10,16 @@
   </div>
 
   <div class="sidebar-wrapper">
-    <ul class="nav" *ngFor="let team of teams">
+    <ul class="nav" *ngFor="let team of oneTeam">
         <li>
-          <a routerLink="team">
-            <img src="{{team.crestURI}}" style="width:20px; height:20px;">
-            {{team.teamName}}
+          <a (click)="onSelectedTeam(team)">
+            <img src="{{team.crest}}" style="width:20px; height:20px;">
+            {{team.name}}
           </a>
       </li>
     </ul>
   </div>
 </div>
-
-
-
-
-
-
-<!-- <li class="active">
-  <a style="padding-top: 7px;"><img src="assets/icons/Chelsea-FC-icon.png" alt="chelsea"> Chelsea FC </a>
-</li>
-<li>
-  <a href="#"><img src="assets/icons/Tottenham-Hotspur-icon.png" alt="chelsea"> Tottenham Hotspur FC
-  </a>
-</li>
-<li><a href="#"><img src="assets/icons/Liverpool-FC-icon.png" alt="chelsea"> Liverpool FC</a></li>
-<li><a href="#"><img src="assets/icons/Manchester-City-icon.png" alt="chelsea"> Manchester City FC</a></li>
-<li><a href="#"><img src="assets/icons/Manchester-United-icon.png" alt="chelsea"> Manchester United FC</a></li>
-<li><a href="#"><img src="assets/icons/Arsenal-FC-icon.png" alt="chelsea"> Arsenal FC</a></li>
-<li><a href="#"> <img src="assets/icons/Everton-FC-icon.png" alt="chelsea"> Everton FC</a></li>
-<li><a href="bootstrap-elements.html"> <img src="assets/icons/West-Bromwich-Albion-icon.png" alt="chelsea"> West Bromwich Albion FC</a></li>
-<li><a href="#"> <img src="assets/icons/Southampton-FC-icon.png" alt="chelsea"> Southampton FC</a></li>
-<li><a href="#"> <img src="assets/icons/AFC-Bournemouth-icon.png" alt="chelsea"> AFC Bournemouth</a></li>
-<li><a href="#"><img src="assets/icons/Leicester-City-icon.png" alt="chelsea"> Leicester City FC</a></li>
-<li><a href="#"> <img src="assets/icons/Stoke-City-icon.png" alt="chelsea"> Stoke City FC</a></li>
-<li><a href="#"> <img src="assets/icons/Watford-FC-icon.png" alt="chelsea"> Watford FC</a></li>
-<li><a href="#"> <img src="assets/icons/Burnley-FC-icon.png" alt="chelsea"> Burnley FC</a></li>
-<li><a href="#"> <img src="assets/icons/West-Ham-United-icon.png" alt="chelsea"> West Ham United FC</a></li>
-<li><a href="#"> <img src="assets/icons/Crystal-Palace-icon.png" alt="chelsea"> Crystal Palace FC</a></li>
-  <li><a href="#"> <img src="assets/icons/Hull-City-icon.png" alt="chelsea"> Hull City FC</a></li>
-<li><a href="#"><img src="assets/icons/Swansea-City-icon.png" alt="chelsea"> Swansea City FC</a></li>
-<li><a href="#"> <img src="assets/icons/Middlesbrough-FC-icon.png" alt="chelsea"> Middlesbrough FC</a></li>
-<li><a href="#"> <img src="assets/icons/Sunderland-AFC-icon.png" alt="chelsea"> Sunderland AFC</a></li> -->
 
 <!--
 league table of another competition eg la liga

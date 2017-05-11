@@ -77,14 +77,13 @@ export class LastGameComponent implements OnInit {
                 }
               });
           }
-
         }
-
       });
-
   }
 
   ngOnInit() {
-      this.lastGameResult("Chelsea FC");
+
   }
+
+  
 }

@@ -24,54 +24,54 @@
     </div>
   </nav>
 
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-               <div class="card">
-                   <div class="card-header" data-background-color="red">
-                       <h4 class="title">English Premiere League</h4>
-                       <p class="category">League Table 2016/17</p>
-                   </div>
-                   <div class="card-content table-responsive">
-                       <table class="table">
-                           <thead class="text-primary-red">
-                             <th>Rank</th>
-                             <th>Club</th>
-                             <th>Played</th>
-                             <th>Win</th>
-                             <th>Lost</th>
-                             <th>Draw</th>
-                             <th>GF</th>
-                             <th>GA</th>
-                             <th>GD</th>
-                             <th>Points</th>
-                           </thead>
-                           <tbody>
-                               <tr *ngFor="let table of leagueInfo">
-                                 <td>{{table.position}}</td>
-                                 <td>
-                                   <img src="{{table.crestURI}}"
-                                   style="width:15px;height:15px;">
-                                   {{table.teamName}}
-                                 </td>
-                                 <td>{{table.playedGames}}</td>
-                                 <td>{{table.wins}}</td>
-                                 <td>{{table.losses}}</td>
-                                 <td>{{table.draws}}</td>
-                                 <td>{{table.goals}}</td>
-                                 <td>{{table.goalsAgainst}}</td>
-                                 <td>{{table.goalDifference}}</td>
-                                 <td>{{table.points}}</td>
-                               </tr>
-                           </tbody>
-                       </table>
-                   </div>
-               </div>
-           </div>
-        </div>
-    </div>
-</div>
+  <div class="content">
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+                 <div class="card">
+                     <div class="card-header" data-background-color="red">
+                         <h4 class="title">English Premiere League</h4>
+                         <p class="category">League Table 2016/17</p>
+                     </div>
+                     <div class="card-content table-responsive">
+                         <table class="table">
+                             <thead class="text-primary-red">
+                               <th>Rank</th>
+                               <th>Club</th>
+                               <th>Played</th>
+                               <th>Win</th>
+                               <th>Lost</th>
+                               <th>Draw</th>
+                               <th>GF</th>
+                               <th>GA</th>
+                               <th>GD</th>
+                               <th>Points</th>
+                             </thead>
+                             <tbody>
+                                 <tr *ngFor="let table of leagueInfo">
+                                   <td>{{table.position}}</td>
+                                   <td>
+                                     <img src="{{table.crestURI}}"
+                                     style="width:15px;height:15px;">
+                                     {{table.teamName}}
+                                   </td>
+                                   <td>{{table.playedGames}}</td>
+                                   <td>{{table.wins}}</td>
+                                   <td>{{table.losses}}</td>
+                                   <td>{{table.draws}}</td>
+                                   <td>{{table.goals}}</td>
+                                   <td>{{table.goalsAgainst}}</td>
+                                   <td>{{table.goalDifference}}</td>
+                                   <td>{{table.points}}</td>
+                                 </tr>
+                             </tbody>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+          </div>
+      </div>
+  </div>
 </div>
 <!-- <footer class="footer">
   <div class="container-fluid">

@@ -15,10 +15,11 @@ import { LastGameComponent } from './team/lastgame/lastgame.component';
 import { LastFiveGamesComponent } from './team/last-five-games/last-five-games.component';
 import { AllGamesComponent } from './team/all-games/all-games.component';
 import { HeadToHeadComponent } from './team/head-to-head/head-to-head.component';
+import { OneTeamComponent } from './team/one-team/one-team.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HeaderComponent},
-  { path: 'team', component: TeamComponent}
+  { path: 'team/:id', component: TeamComponent},
+  { path: 'leaguetable', component: LeagueTableComponent}
 ]
 
 @NgModule({
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     LastGameComponent,
     LastFiveGamesComponent,
     AllGamesComponent,
-    HeadToHeadComponent
+    HeadToHeadComponent,
+    OneTeamComponent
   ],
   imports: [
     BrowserModule,

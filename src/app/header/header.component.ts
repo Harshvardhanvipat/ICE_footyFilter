@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
-import { TeamComponent } from '../team/team.component';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { SingleTeam } from '../team/SingleTeam.model';
 
-declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
 let options = new RequestOptions({ headers: headers });
-
-declare var $: any;
-declare var team: TeamComponent;
 
 @Component({
   selector: 'app-header',
@@ -16,21 +13,35 @@ declare var team: TeamComponent;
 })
 
 export class HeaderComponent implements OnInit {
-  teams = [];
-  private _url: string = "http://api.football-data.org/v1/competitions/426/leagueTable";
+  oneTeam: SingleTeam[] = [];
+  private teams = [];
+  private id = [];
+  private _url: string = "http://api.football-data.org/v1/competitions/426/teams";
+  private getTeamUrl: string = "";
 
-  constructor(private _http: Http) { }
+  constructor(private _http: Http, private router: Router) { }
 
-  pushAll(arr, arr2){
-      for(var i = 0; i < arr2.length; i++){
-        arr[i] = arr2[i];
-      }
+  getTeam(){
+    this._http.get(this._url, options)
+      .map((res: Response) => res.json())
+      .subscribe((res) => {
+        this.teams = res.teams; //async call
+        console.log(this.teams);
+        for(var i = 0; i < this.teams.length; i++){
+          var link = this.teams[i]._links.self.href;
+          var split = link.split('/');
+          this.oneTeam.push(new SingleTeam(split[split.length -1],
+            this.teams[i].name, this.teams[i].crestUrl));
+        }
+      });
+  }
+
+  onSelectedTeam(team){
+    this.router.navigate(['/team', team.id]);
   }
 
   ngOnInit() {
-    this._http.get(this._url, options)
-            .map((res: Response) => res.json())
-            .subscribe(res=> this.pushAll(this.teams, res.standing));
-    console.log(this.teams);
+      this.getTeam();
   }
+
 }
