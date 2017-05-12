@@ -8,7 +8,7 @@ import { ActivatedRoute, Params} from '@angular/router';
 })
 
 export class TeamComponent implements OnInit {
-  public teamID;
+  public teamName;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -16,9 +16,8 @@ export class TeamComponent implements OnInit {
     // let id = this.route.snapshot.params['id'];
     // this.teamID = id;
     this.route.params.subscribe((params: Params)=>{
-      let id = params['name'];
-      this.teamID = id;
+      let name = params['name'];
+      this.teamName = name;
     })
   }
-
 }

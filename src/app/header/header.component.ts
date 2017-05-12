@@ -22,6 +22,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private _http: Http, private router: Router) { }
 
+  //stores each team with their id, name and logo in an array of SingleTeam[]
   getTeam(){
     this._http.get(this._url, options)
       .map((res: Response) => res.json())

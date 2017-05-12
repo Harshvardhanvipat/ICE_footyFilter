@@ -2,10 +2,8 @@ import { Component, OnChanges, Input } from '@angular/core';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
 
-declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
 let options = new RequestOptions({ headers: headers });
-
 
 @Component({
   selector: 'app-last-game',
@@ -86,9 +84,5 @@ export class LastGameComponent implements OnChanges {
   ngOnChanges() {
     this.lastGameResult(this.nameOfTeam);
   }
-
-
-
-
 
 }

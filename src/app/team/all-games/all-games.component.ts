@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { Results } from '../Results.model';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -15,7 +15,7 @@ let options = new RequestOptions({ headers: headers });
 })
 
 
-export class AllGamesComponent implements OnInit {
+export class AllGamesComponent implements OnChanges {
   private teams = [];
   date = "";
   allResults: Results[] = []; //model for storing data for all results
@@ -26,6 +26,7 @@ export class AllGamesComponent implements OnInit {
   constructor(private _http: Http, private route: ActivatedRoute) { }
 
   getAllGames(teamName: string){
+    this.allResults = [];
     var count = 0;
     this._http.get(this._url, options)
       .map((res: Response) => res.json())
@@ -77,8 +78,10 @@ export class AllGamesComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
-      this.getAllGames("Chelsea FC");
+  @Input() nameOfTeam: string;
+
+  ngOnChanges() {
+      this.getAllGames(this.nameOfTeam);
   }
 
 }

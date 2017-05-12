@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 import { Results } from '../Results.model';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -15,7 +15,7 @@ let options = new RequestOptions({ headers: headers });
 })
 
 
-export class LastFiveGamesComponent implements OnInit {
+export class LastFiveGamesComponent implements OnChanges {
   private teams = [];
   date = "";
   lastFive: Results[] = []; //model for storing data for last five games
@@ -26,6 +26,7 @@ export class LastFiveGamesComponent implements OnInit {
   constructor(private _http: Http, private route: ActivatedRoute) { }
 
   getLastFiveGames(teamName: string){
+    this.lastFive = [];
     var count = 0;
     this._http.get(this._url, options)
       .map((res: Response) => res.json())
@@ -81,9 +82,10 @@ export class LastFiveGamesComponent implements OnInit {
         }
       });
   }
+  @Input() nameOfTeam: string;
 
-  ngOnInit() {
-      this.getLastFiveGames("Chelsea FC");
+  ngOnChanges() {
+      this.getLastFiveGames(this.nameOfTeam);
   }
 
 }
