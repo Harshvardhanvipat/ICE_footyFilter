@@ -25,23 +25,25 @@
 </nav>
 
 <div class="content">
-    <h3>Team: {{teamName}} </h3>
-    <button class="primary btn">View last game</button>
+    <!-- <h3>Team: {{teamName}} </h3> -->
+    <!-- <button class="primary btn">View last game</button>
     <button class="primary btn">View last 5 games</button>
-    <button class="primary btn">View all games this season</button>
-    <app-last-game [nameOfTeam]="teamName"></app-last-game>
-
-   <div id="accordion" role="tablist" aria-multiselectable="false">
-      <app-last-five [nameOfTeam]="teamName"></app-last-five>
-      <app-all-games [nameOfTeam]="teamName"></app-all-games>
-      <!-- <app-head-to-head></app-head-to-head> -->
-
-    </div>
+    <button class="primary btn">View all games this season</button> -->
+  <app-last-game [nameOfTeam]="teamName"></app-last-game>
+  <div class="col-md-6">
+     <div id="accordion" role="tablist" aria-multiselectable="false">
+        <app-last-five [nameOfTeam]="teamName"></app-last-five>
+        <!-- <app-head-to-head></app-head-to-head> -->
+      </div>
+  </div>
+  <div class="col-md-6">
+    <app-all-games [nameOfTeam]="teamName"></app-all-games>
+  </div>
 </div>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container-fluid">
             <p class="copyright pull-right">
                 &copy; 2017 <a href="#">FootyFilter</a>
         </div>
-    </footer>
+    </footer> -->
 </div>

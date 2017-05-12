@@ -39,7 +39,7 @@ export class LastGameComponent implements OnChanges {
             var link = this.teams[i]._links.self.href;
             var split = link.split('/');
             var teamID = split[split.length -1]; //get team ID;
-            console.log("THIS IS IT " + teamID);
+
             this.getTeamUrl =
             "http://api.football-data.org/v1/teams/" + teamID + "/fixtures";
 
@@ -47,7 +47,7 @@ export class LastGameComponent implements OnChanges {
             this._http.get(this.getTeamUrl, options)
               .map((res: Response) => res.json())
               .subscribe((res) => {
-                console.log(res);
+                // console.log(res);
                 for(var i = res.fixtures.length - 1; i >= 0; i--){
                   if(res.fixtures[i].status == "FINISHED"){
                     if(res.fixtures[i].awayTeamName == teamName){

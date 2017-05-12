@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
       .map((res: Response) => res.json())
       .subscribe((res) => {
         this.teams = res.teams; //async call
-        console.log(this.teams);
+        // console.log(this.teams);
         for(var i = 0; i < this.teams.length; i++){
           var link = this.teams[i]._links.self.href;
           var split = link.split('/');

@@ -21,7 +21,14 @@ const appRoutes: Routes = [
   { path: 'team/:name', component: TeamComponent},
   { path: 'leaguetable', component: LeagueTableComponent}
 ]
-
+// 
+// const appRoutes: Routes = [
+//   { path: '', component: HeaderComponent,
+//     children: [
+//       { path: 'team/:name', component: TeamComponent},
+//       { path: 'leaguetable', component: LeagueTableComponent}
+//     ]}
+// ]
 @NgModule({
   declarations: [
     AppComponent,
