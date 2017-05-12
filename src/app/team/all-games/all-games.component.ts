@@ -81,7 +81,7 @@ export class AllGamesComponent implements OnChanges {
   @Input() nameOfTeam: string;
 
   ngOnChanges() {
-      this.getAllGames(this.nameOfTeam);
+      this.getAllGames(this.nameOfTeam);      
   }
 
 }
