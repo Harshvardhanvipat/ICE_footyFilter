@@ -18,10 +18,9 @@ import { OneTeamComponent } from './team/one-team/one-team.component';
 
 const appRoutes: Routes = [
   // { path: '', component: HeaderComponent},
-  { path: 'team/:name', component: TeamComponent},
-  { path: 'leaguetable', component: LeagueTableComponent}
+  { path: 'team/:name', component: TeamComponent}
 ]
-// 
+//
 // const appRoutes: Routes = [
 //   { path: '', component: HeaderComponent,
 //     children: [

@@ -2,18 +2,17 @@ import { Component, OnChanges, Input } from '@angular/core';
 import { Results } from '../Results.model';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
+import Chart from 'chart.js';
 
 declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
 let options = new RequestOptions({ headers: headers });
-
 
 @Component({
   selector: 'app-all-games',
   templateUrl: './all-games.component.html',
   styleUrls: ['./all-games.component.css']
 })
-
 
 export class AllGamesComponent implements OnChanges {
   private teams = [];
@@ -72,6 +71,47 @@ export class AllGamesComponent implements OnChanges {
                       }
                     }
                 }
+                //chart js
+                var ctx = document.getElementById("myChart2");
+                var myWins = 0;
+                var rivalWins = 0;
+                var draws = 0;
+                for(var k = 0; k < this.allResults.length; k++){
+                  if(parseInt(this.allResults[k].myresult) > parseInt(this.allResults[k].rivalresult)){
+                      myWins++;
+                  }
+                  else if(parseInt(this.allResults[k].myresult) < parseInt(this.allResults[k].rivalresult)){
+                    rivalWins++;
+                  }
+                  else{
+                    draws++;
+                  }
+
+                  var myPieChart = new Chart(ctx,{
+                  type: 'doughnut',
+                  data: {
+                      labels: [
+                          "Wins",
+                          "Losses",
+                          "Draws"
+                      ],
+                      datasets: [
+                      {
+                          data: [myWins, rivalWins, draws],
+                          backgroundColor: [
+                            "#6ad155",
+                            "#c92828",
+                            "#616166"
+                          ],
+                          hoverBackgroundColor: [
+                            "#6ad155",
+                            "#c92828",
+                            "#616166"
+                          ]
+                      }]
+                    }
+                  });
+                }
               });
           }
         }
@@ -80,8 +120,13 @@ export class AllGamesComponent implements OnChanges {
 
   @Input() nameOfTeam: string;
 
+  getchart(){
+
+  }
+
   ngOnChanges() {
-      this.getAllGames(this.nameOfTeam);      
+      this.getAllGames(this.nameOfTeam);
+      //this.getchart();
   }
 
 }

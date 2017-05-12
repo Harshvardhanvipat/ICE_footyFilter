@@ -2,11 +2,11 @@ import { Component, OnChanges, Input } from '@angular/core';
 import { Results } from '../Results.model';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
+import Chart from 'chart.js';
 
 declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
 let options = new RequestOptions({ headers: headers });
-
 
 @Component({
   selector: 'app-last-five',
@@ -16,6 +16,7 @@ let options = new RequestOptions({ headers: headers });
 
 
 export class LastFiveGamesComponent implements OnChanges {
+
   private teams = [];
   date = "";
   lastFive: Results[] = []; //model for storing data for last five games
@@ -77,6 +78,46 @@ export class LastFiveGamesComponent implements OnChanges {
                     }
                   }
                 }
+                //CHART JS
+                var ctx = document.getElementById("myChart");
+                var myWins = 0;
+                var rivalWins = 0;
+                var draws = 0;
+                for(var k = 0; k < this.lastFive.length; k++){
+                  if(parseInt(this.lastFive[k].myresult) > parseInt(this.lastFive[k].rivalresult)){
+                      myWins++;
+                  }
+                  else if(parseInt(this.lastFive[k].myresult) < parseInt(this.lastFive[k].rivalresult)){
+                    rivalWins++;
+                  }
+                  else{
+                    draws++;
+                  }
+                  var myChart = new Chart(ctx, {
+                  type: 'doughnut',
+                  data: {
+                        labels: [
+                              "Wins",
+                              "Losses",
+                              "Draws"
+                          ],
+                          datasets: [
+                          {
+                              data: [myWins, rivalWins, draws],
+                              backgroundColor: [
+                                  "#6ad155",
+                                  "#c92828",
+                                  "#616166"
+                              ],
+                              hoverBackgroundColor: [
+                                  "#6ad155",
+                                  "#c92828",
+                                  "#616166"
+                              ]
+                          }]
+                        }
+                    });
+                }
               });
           }
         }
@@ -86,6 +127,7 @@ export class LastFiveGamesComponent implements OnChanges {
 
   ngOnChanges() {
       this.getLastFiveGames(this.nameOfTeam);
+      //this.getchart();
   }
 
 }

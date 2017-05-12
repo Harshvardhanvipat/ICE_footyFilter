@@ -8,12 +8,9 @@
   </div>
   <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
     <div class="card-content">
-      <!-- <div class="card card-profile"> -->
-      <!-- <ul *ngFor="let o of otherTeams">
-        <li (click)="getTeamName()">{{o}}</li>
-      </ul> -->
       <span>
-        <a href="javascript:void(0);" *ngFor="let team of otherTeams">
+        <h4 style="text-align: center;"><strong>Select a rival team</strong></h4>
+        <a href="javascript:void(0);" *ngFor="let team of otherTeams" class="image">
             <img src="{{team.logo}}"
             style="width:70px;height:70px; margin-top:10px; margin-right:5px;"
             (click)="getSelectedTeam(team.name)"/>
@@ -28,6 +25,7 @@
           &nbsp; &nbsp;{{game.rival}}</p>
         <hr>
       </span>
+      <canvas id="myChart" width="200" height="200"></canvas>
     </div>
   </div>
 </div>

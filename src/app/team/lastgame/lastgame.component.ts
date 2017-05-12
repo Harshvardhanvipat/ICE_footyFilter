@@ -23,6 +23,8 @@ export class LastGameComponent implements OnChanges {
   singleDate = "";
   date = "";
   id = "";
+  myLogo = "";
+  rivalLogo= "";
 
   private _url: string = "http://api.football-data.org/v1/competitions/426/teams";
   private getTeamUrl: string = "";

@@ -3,6 +3,7 @@ import { Results } from '../Results.model';
 import { OtherTeams } from '../OtherTeams.model';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 import { ActivatedRoute, Params } from '@angular/router';
+import Chart from 'chart.js';
 
 declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
@@ -72,6 +73,9 @@ export class HeadToHeadComponent implements OnChanges {
                       }
                     }
                 }
+                //CHART JS
+                //console.log(this.selectedResults);
+
               });
           }
         }
@@ -105,7 +109,7 @@ export class HeadToHeadComponent implements OnChanges {
 
   ngOnChanges() {
       this.getOtherTeams(this.nameOfTeam);
-      //console.log(this.rivalTeam);    
+      //console.log(this.rivalTeam);
   }
 
   }
