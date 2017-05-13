@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
 
 declare var $: any;
@@ -10,8 +10,9 @@ let options = new RequestOptions({ headers: headers });
   templateUrl: './league-table.component.html',
   styleUrls: ['./league-table.component.css']
 })
-export class LeagueTableComponent implements OnInit, OnChanges {
+export class LeagueTableComponent implements OnInit{
   leagueInfo = [];
+  flag = false;
   private _url: string = "http://api.football-data.org/v1/competitions/426/leagueTable";
   //437
   constructor(private _http: Http) { }
@@ -23,11 +24,6 @@ export class LeagueTableComponent implements OnInit, OnChanges {
       }
   }
 
-  changeLeague(){
-    this._url = "http://api.football-data.org/v1/competitions/437/leagueTable";
-    console.log("here");
-  }
-
   leagueTable(){
     this._http.get(this._url, options)
             .map((res: Response) => res.json())
@@ -35,16 +31,37 @@ export class LeagueTableComponent implements OnInit, OnChanges {
               this.pushAll(this.leagueInfo, res.standing);
               this.leagueName = res.leagueCaption;
             } );
+  }
 
+  changeLeague(){
+    let button = document.getElementById('btn').innerText;
+    if(this.flag === false){
+      button = document.getElementById('btn').innerHTML = "CHANGE TO EPL"
+      this._url = "http://api.football-data.org/v1/competitions/437/leagueTable";
+      this._http.get(this._url, options)
+              .map((res: Response) => res.json())
+              .subscribe(res=> {
+                this.pushAll(this.leagueInfo, res.standing);
+                this.leagueName = res.leagueCaption;
+              });
+        this.flag = true;
+    }
+    else{
+      button = document.getElementById('btn').innerHTML = "CHANGE LEAGUE"
+      console.log(this.flag);
+      this._url = "http://api.football-data.org/v1/competitions/426/leagueTable";
+      this._http.get(this._url, options)
+              .map((res: Response) => res.json())
+              .subscribe(res=> {
+                this.pushAll(this.leagueInfo, res.standing);
+                this.leagueName = res.leagueCaption;
+              });
+      this.flag = false;
+      this.leagueInfo = [];
+    }
   }
 
   ngOnInit() {
     this.leagueTable();
-            // console.log(this.leagueInfo.length);
-  }
-  ngOnChanges() {
-    if(this.changeLeague()){
-      this.leagueTable();
-    }
   }
 }

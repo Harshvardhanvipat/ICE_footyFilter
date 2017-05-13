@@ -11,15 +11,16 @@
       <a class="navbar-brand" href="#"></a>
     </div>
     <div class="collapse navbar-collapse">
-      <!-- <form class="navbar-form navbar-right" role="search">
-        <div class="form-group  is-empty">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="material-input"></span>
-        </div>
-        <button type="submit" class="btn btn-white btn-round btn-just-icon">
-          <i class="material-icons">search</i><div class="ripple-container"></div>
+      <form class="navbar-form navbar-right" routerLink="/">
+        <!-- <div class="form-group  is-empty">
+            <a href="">La Liga League Table</a>
+        </div> -->
+
+        <button class="btn btn-primary btn-block" (click)="changeLeague()" id="btn">
+          Home
         </button>
-      </form> -->
+
+      </form>
     </div>
   </div>
 </nav>
@@ -40,13 +41,17 @@
   <div class="col-md-6">
     <app-head-to-head [nameOfTeam]="teamName"></app-head-to-head>
   </div>
-  <app-all-games [nameOfTeam]="teamName"></app-all-games>
-
+  <div class="col-md-6">
+    <app-all-games [nameOfTeam]="teamName"></app-all-games>
+  </div>
+  <div class="col-md-6">
+    <app-upcoming-games [nameOfTeam]="teamName"></app-upcoming-games>
+  </div>
 </div>
     <footer class="footer">
         <div class="container-fluid">
             <p class="copyright pull-right">
-                &copy; 2017 <a href="#">FootyFilter</a>
+              Made with &hearts; <a href="/">FootyFilter</a> 2017
         </div>
     </footer>
 </div>

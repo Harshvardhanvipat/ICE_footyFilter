@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header" role="tab" id="headingfour"  data-background-color="green">
+    <h5 class="mb-0">
+      <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+        Upcoming games
+      </a>
+    </h5>
+  </div>
+  <div id="collapsefour" class="collapse" role="tabpanel" aria-labelledby="headingfour">
+    <div class="card-content">
+      <span *ngFor="let game of upcomingGames">
+        <p><i><small>Date: {{game.date}},</small> <small>Match Day: {{game.matchday}}</small></i></p>
+        <p>{{game.teamName}}
+          &nbsp; &nbsp;<b>vs.</b>
+          &nbsp; &nbsp;{{game.rival}}</p>
+        <hr>
+      </span>
+    </div>
+  </div>
+</div>

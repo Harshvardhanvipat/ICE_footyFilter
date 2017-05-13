@@ -15,7 +15,7 @@
           <!-- <div class="form-group  is-empty">
               <a href="">La Liga League Table</a>
           </div> -->
-          <button class="btn btn-primary btn-block" (click)="changeLeague()">
+          <button class="btn btn-primary btn-block" (click)="changeLeague()" id="btn">
             Change League
           </button>
         </form>
@@ -30,7 +30,7 @@
                  <div class="card">
                      <div class="card-header" data-background-color="green">
                          <h4 class="title">{{leagueName}}</h4>
-                         <p class="category">League Table 2016/17</p>
+                         <p class="category">League Table</p>
                      </div>
                      <div class="card-content table-responsive">
                          <table class="table">
@@ -71,6 +71,12 @@
           </div>
       </div>
   </div>
+  <footer class="footer">
+      <div class="container-fluid">
+          <p class="copyright pull-right">
+            Made with &hearts; <a href="/">FootyFilter</a> 2017
+      </div>
+  </footer>
 </div>
 <!-- <footer class="footer">
   <div class="container-fluid">

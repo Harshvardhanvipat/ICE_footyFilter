@@ -51,6 +51,7 @@ export class HeaderComponent implements OnInit {
           this.oneTeam.push(new SingleTeam(split[split.length -1],
             this.teams[i].name, this.teams[i].crestUrl));
         }
+        this.oneTeam.reverse();
       });
   }
 
