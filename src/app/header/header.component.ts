@@ -3,7 +3,9 @@ import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} f
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { SingleTeam } from '../team/SingleTeam.model';
 import 'rxjs/add/operator/map';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
+declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
 let options = new RequestOptions({ headers: headers });
 
@@ -20,7 +22,21 @@ export class HeaderComponent implements OnInit {
   private _url: string = "http://api.football-data.org/v1/competitions/426/teams";
   private getTeamUrl: string = "";
 
-  constructor(private _http: Http, private router: Router) { }
+  constructor(private _http: Http, private router: Router, private slimLoadingBarService: SlimLoadingBarService) { }
+
+  // startLoading() {
+  //       this.slimLoadingBarService.start(() => {
+  //           console.log('Loading complete');
+  //       });
+  //   }
+  //
+  //   stopLoading() {
+  //       this.slimLoadingBarService.stop();
+  //   }
+  //
+  //   completeLoading() {
+  //       this.slimLoadingBarService.complete();
+  //   }
 
   //stores each team with their id, name and logo in an array of SingleTeam[]
   getTeam(){
@@ -42,8 +58,15 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/team', team.name]);
   }
 
+  // $(document).ready(function() {
+  // 	// get current URL path and assign 'active' class
+  // 	var pathname = window.location.pathname;
+  // 	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
+  // })
+
   ngOnInit() {
       this.getTeam();
+
   }
 
 }

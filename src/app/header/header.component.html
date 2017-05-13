@@ -1,4 +1,6 @@
+<!-- <ng2-slim-loading-bar></ng2-slim-loading-bar> -->
 <div class="sidebar" data-color="red" data-image="">
+
     <!--
         Tip 1: You can change the color of the sidebar using: data-color="red | blue | green | orange | red"
       Tip 2: you can also add an image using data-image tag
@@ -8,10 +10,10 @@
       <span><img src="assets/icons/logo.png" style="width: 30px;height: 30px;"></span>   <b>Footy</b>Filter
     </a>
   </div>
-
+<!-- routerLink="/team/:id" -->
   <div class="sidebar-wrapper">
     <ul class="nav" *ngFor="let team of oneTeam">
-        <li (click)="onSelectedTeam(team)" routerLinkActive="active" routerLink="/team/:id">
+        <li (click)="onSelectedTeam(team)" routerLinkActive="active">
           <a href="javascript:void(0);">
             <img src="{{team.crest}}" style="width:20px; height:20px;">
             {{team.name}}

@@ -13,8 +13,6 @@ export class TeamComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // let id = this.route.snapshot.params['id'];
-    // this.teamID = id;
     this.route.params.subscribe((params: Params)=>{
       let name = params['name'];
       this.teamName = name;

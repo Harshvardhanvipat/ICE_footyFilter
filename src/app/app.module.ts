@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 
 // import { jtt_footballdata } from '../../node_modules/angular-footballdata-api-factory';
 import { AppComponent } from './app.component';
@@ -17,7 +18,7 @@ import { HeadToHeadComponent } from './team/head-to-head/head-to-head.component'
 import { OneTeamComponent } from './team/one-team/one-team.component';
 
 const appRoutes: Routes = [
-  // { path: '', component: HeaderComponent},
+  { path: '', component: LeagueTableComponent},
   { path: 'team/:name', component: TeamComponent}
 ]
 //
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    SlimLoadingBarModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

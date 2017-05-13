@@ -11,14 +11,13 @@
         <a class="navbar-brand" href="#"></a>
       </div>
       <div class="collapse navbar-collapse">
-        <form class="navbar-form navbar-left" role="search">
+        <form class="navbar-form navbar-right" role="search">
           <!-- <div class="form-group  is-empty">
-              <input type="text" class="form-control" placeholder="Search">
-              <span class="material-input"></span>
-          </div>
-          <button type="submit" class="btn btn-white btn-round btn-just-icon">
-            <i class="material-icons">search</i><div class="ripple-container"></div>
-          </button> -->
+              <a href="">La Liga League Table</a>
+          </div> -->
+          <button class="btn btn-primary btn-block" (click)="changeLeague()">
+            Change League
+          </button>
         </form>
        </div>
     </div>
@@ -29,8 +28,8 @@
           <div class="row">
             <div class="col-md-12">
                  <div class="card">
-                     <div class="card-header" data-background-color="red">
-                         <h4 class="title">English Premiere League</h4>
+                     <div class="card-header" data-background-color="green">
+                         <h4 class="title">{{leagueName}}</h4>
                          <p class="category">League Table 2016/17</p>
                      </div>
                      <div class="card-content table-responsive">
