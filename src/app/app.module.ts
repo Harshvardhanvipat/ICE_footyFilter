@@ -17,6 +17,7 @@ import { AllGamesComponent } from './team/all-games/all-games.component';
 import { HeadToHeadComponent } from './team/head-to-head/head-to-head.component';
 import { OneTeamComponent } from './team/one-team/one-team.component';
 import { UpcomingGamesComponent } from './team/upcoming-games/upcoming-games.component';
+import { GetPlayersComponent } from './team/get-players/get-players.component';
 
 const appRoutes: Routes = [
   { path: '', component: LeagueTableComponent},
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     AllGamesComponent,
     HeadToHeadComponent,
     OneTeamComponent,
-    UpcomingGamesComponent
+    UpcomingGamesComponent,
+    GetPlayersComponent
   ],
   imports: [
     BrowserModule,

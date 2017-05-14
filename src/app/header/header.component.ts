@@ -24,20 +24,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(private _http: Http, private router: Router, private slimLoadingBarService: SlimLoadingBarService) { }
 
-  // startLoading() {
-  //       this.slimLoadingBarService.start(() => {
-  //           console.log('Loading complete');
-  //       });
-  //   }
-  //
-  //   stopLoading() {
-  //       this.slimLoadingBarService.stop();
-  //   }
-  //
-  //   completeLoading() {
-  //       this.slimLoadingBarService.complete();
-  //   }
-
   //stores each team with their id, name and logo in an array of SingleTeam[]
   getTeam(){
     this._http.get(this._url, options)
@@ -58,12 +44,6 @@ export class HeaderComponent implements OnInit {
   onSelectedTeam(team){
     this.router.navigate(['/team', team.name]);
   }
-
-  // $(document).ready(function() {
-  // 	// get current URL path and assign 'active' class
-  // 	var pathname = window.location.pathname;
-  // 	$('.nav > li > a[href="'+pathname+'"]').parent().addClass('active');
-  // })
 
   ngOnInit() {
       this.getTeam();
