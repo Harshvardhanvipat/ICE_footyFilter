@@ -59,7 +59,7 @@ export class LastGameComponent implements OnChanges {
                       this.rivalResult = res.fixtures[i].result.goalsHomeTeam;
                       this.matchday = res.fixtures[i].matchday;
                       var fulldate = res.fixtures[i].date;
-                      var justDate = fulldate.split('T');
+                      var justDate = fulldate.split('T');                                            
                       this.singleDate = justDate[0];
                     }
                     else if(res.fixtures[i].homeTeamName == teamName){

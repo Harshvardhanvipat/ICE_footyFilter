@@ -14,7 +14,6 @@ let options = new RequestOptions({ headers: headers });
   styleUrls: ['./last-five-games.component.css']
 })
 
-
 export class LastFiveGamesComponent implements OnChanges {
 
   private teams = [];

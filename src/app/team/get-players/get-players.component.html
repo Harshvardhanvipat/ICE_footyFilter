@@ -8,12 +8,32 @@
   </div>
 
   <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingfive">
-    <div class="card-content">
-      <span *ngFor="let p of players">
-        {{p.name}} <br>
-        <small><strong>{{p.position}}</strong>, Age:{{p.age}}</small>
-        <hr>
-      </span>
-    </div>
+        <div class="card-content">
+          <div class="card-content table-responsive">
+            <table class="table">
+                <thead class="text-primary-red">
+                  <th>No.</th>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th>Age</th>
+                  <th>Nationality</th>
+                  <th>Contract</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of players; let i=index">
+                      <td>{{i+1}}<strong>  {{p.jerseyNumber}}</strong></td>
+                      <td>{{p.name}}</td>
+                      <td>{{p.position}}</td>
+                      <td>{{p.age}}</td>
+                      <td>{{p.nationality}}</td>
+                      <td>{{p.contractUntil | date}}</td>
+                    </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>
   </div>
 </div>
+
+
+<!--/row-->

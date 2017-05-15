@@ -43,8 +43,16 @@ export class AllGamesComponent implements OnChanges {
             this._http.get(this.getTeamUrl, options)
               .map((res: Response) => res.json())
               .subscribe((res) => {
+                if(res.fixtures[0]._links.competition.href ===
+                "http://api.football-data.org/v1/competitions/426"){
+                  console.log("EPL")
+                }else{
+                  console.log("Other");
+                }
                 for(var i = res.fixtures.length - 1; i >= 0; i--){
-                    if(res.fixtures[i].status == "FINISHED"){
+                    if(res.fixtures[i].status == "FINISHED"
+                  && (res.fixtures[i]._links.competition.href ===
+                "http://api.football-data.org/v1/competitions/426")){
                       if(res.fixtures[i].awayTeamName == teamName){
 
                         var fulldate = res.fixtures[i].date;

@@ -20,6 +20,7 @@ export class GetPlayersComponent implements OnChanges {
   private date = new Date();
 
   getPlayer(teamName: string){
+    this.players = [];
     this._http.get(this._url, options)
       .map((res: Response) => res.json())
       .subscribe((res) => {
@@ -61,7 +62,6 @@ export class GetPlayersComponent implements OnChanges {
   @Input() nameOfTeam: string;
 
   ngOnChanges() {
-
     this.getPlayer(this.nameOfTeam);
   }
 

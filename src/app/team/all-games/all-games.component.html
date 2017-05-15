@@ -11,7 +11,7 @@
       <canvas id="myChart2" width="300px" height="300px"></canvas>
       <hr>
       <span *ngFor="let game of allResults">
-        <p><i><small>Date: {{game.date}},</small> <small>Match Day: {{game.matchday}}</small></i></p>
+        <p><i><small>{{game.date | date}},</small> <small>Match Day: {{game.matchday}}</small></i></p>
         <p>{{game.teamName}}
           &nbsp; &nbsp;<b>{{game.myresult}} - {{game.rivalresult}}</b>
           &nbsp; &nbsp;{{game.rival}}</p>

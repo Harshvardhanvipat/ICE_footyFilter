@@ -44,7 +44,7 @@ const appRoutes: Routes = [
     HeadToHeadComponent,
     OneTeamComponent,
     UpcomingGamesComponent,
-    GetPlayersComponent
+    GetPlayersComponent    
   ],
   imports: [
     BrowserModule,

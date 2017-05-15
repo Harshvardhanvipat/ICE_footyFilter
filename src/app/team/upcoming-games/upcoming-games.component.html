@@ -9,7 +9,7 @@
   <div id="collapsefour" class="collapse" role="tabpanel" aria-labelledby="headingfour">
     <div class="card-content">
       <span *ngFor="let game of upcomingGames">
-        <p><i><small>Date: {{game.date}},</small> <small>Match Day: {{game.matchday}}</small></i></p>
+        <p><i><small>{{game.date | date}},</small> <small>Match Day: {{game.matchday}}</small></i></p>
         <p>{{game.teamName}}
           &nbsp; &nbsp;<b>vs.</b>
           &nbsp; &nbsp;{{game.rival}}</p>
