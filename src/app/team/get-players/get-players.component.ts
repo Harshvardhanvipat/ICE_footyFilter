@@ -17,13 +17,7 @@ export class GetPlayersComponent implements OnChanges {
   private _url: string = "http://api.football-data.org/v1/competitions/426/teams";
   private getTeamUrl: string = "";
   constructor(private _http: Http, private route: ActivatedRoute) { }
-
-  ngOnChanges() {
-    // this.lastGameResult(this.nameOfTeam);
-    this.getPlayer("Chelsea FC");
-  }
-
-  @Input() nameOfTeam: string;
+  private date = new Date();
 
   getPlayer(teamName: string){
     this._http.get(this._url, options)
@@ -39,25 +33,36 @@ export class GetPlayersComponent implements OnChanges {
             this.getTeamUrl =
             "http://api.football-data.org/v1/teams/" + teamID + "/players";
 
-            //a second API call: this time for team results
+            //a second API call: this time for getting squad
             this._http.get(this.getTeamUrl, options)
               .map((res: Response) => res.json())
               .subscribe((res) => {
                 //console.log(res.players);
                 for(var k = 0; k < res.players.length; k++){
+                  //Convert date to age
+                  let date = res.players[k].dateOfBirth.split('-');
+                  let age = this.date.getFullYear() - date[0];
+
                   this.players.push(new Players(
                     res.players[k].contractUntil,
-                    res.players[k].dateOfBirth,
+                    age,
                     res.players[k].jerseyNumber,
                     res.players[k].name,
                     res.players[k].nationality,
-                    res.players[k].position,
+                    res.players[k].position
                   ))
                 }
               });
           }
         }
       });
+  }
+
+  @Input() nameOfTeam: string;
+
+  ngOnChanges() {
+
+    this.getPlayer(this.nameOfTeam);
   }
 
 }

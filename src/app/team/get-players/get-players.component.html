@@ -2,7 +2,7 @@
   <div class="card-header" role="tab" id="headingfive" data-background-color="green">
     <h5 class="mb-0">
       <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-        Squad
+        Current Squad
       </a>
     </h5>
   </div>
@@ -10,7 +10,8 @@
   <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingfive">
     <div class="card-content">
       <span *ngFor="let p of players">
-        {{p.name}}
+        {{p.name}} <br>
+        <small><strong>{{p.position}}</strong>, Age:{{p.age}}</small>
         <hr>
       </span>
     </div>
