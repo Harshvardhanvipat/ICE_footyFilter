@@ -13,7 +13,7 @@ let options = new RequestOptions({ headers: headers });
 })
 export class GetPlayersComponent implements OnChanges {
   private teams = [];
-  private players: Players[] = [];
+  players: Players[] = [];
   private _url: string = "http://api.football-data.org/v1/competitions/426/teams";
   private getTeamUrl: string = "";
   constructor(private _http: Http, private route: ActivatedRoute) { }

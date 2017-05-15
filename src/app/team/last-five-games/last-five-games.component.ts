@@ -16,14 +16,14 @@ let options = new RequestOptions({ headers: headers });
 
 export class LastFiveGamesComponent implements OnChanges {
 
-  private teams = [];
+  public teams = [];
   date = "";
   lastFive: Results[] = []; //model for storing data for last five games
 
-  private _url: string = "http://api.football-data.org/v1/competitions/426/teams";
-  private getTeamUrl: string = "";
+  public _url: string = "http://api.football-data.org/v1/competitions/426/teams";
+  public getTeamUrl: string = "";
 
-  constructor(private _http: Http, private route: ActivatedRoute) { }
+  constructor(public _http: Http, public route: ActivatedRoute) { }
 
   getLastFiveGames(teamName: string){
     this.lastFive = [];

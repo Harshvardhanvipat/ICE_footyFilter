@@ -37,7 +37,7 @@ export class LeagueTableComponent implements OnInit{
     let button = document.getElementById('btn').innerText;
     if(this.flag === false){
       button = document.getElementById('btn').innerHTML = "CHANGE TO EPL"
-      this._url = "http://api.football-data.org/v1/competitions/437/leagueTable";
+      this._url = "http://api.football-data.org/v1/competitions/436/leagueTable";
       this._http.get(this._url, options)
               .map((res: Response) => res.json())
               .subscribe(res=> {
@@ -47,7 +47,7 @@ export class LeagueTableComponent implements OnInit{
         this.flag = true;
     }
     else{
-      button = document.getElementById('btn').innerHTML = "CHANGE LEAGUE"
+      button = document.getElementById('btn').innerHTML = "CHANGE TO LA LIGA"
       console.log(this.flag);
       this._url = "http://api.football-data.org/v1/competitions/426/leagueTable";
       this._http.get(this._url, options)
