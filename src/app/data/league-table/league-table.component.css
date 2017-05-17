@@ -1,3 +1,15 @@
 .btn.btn-primary{
   background-color: #50AA54;
-} 
+}
+
+div #games{
+  text-align: center;
+}
+
+div[_ngcontent-c2]   #games[_ngcontent-c2]{
+  padding: 20px 0px 0px 0px;
+}
+
+h3 #nogames{
+  text-align: center;
+}

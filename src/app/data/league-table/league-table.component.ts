@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response, Request, RequestOptions, RequestOptionsArgs, Headers} from '@angular/http';
-import { UpcomingGames } from '../../team/upcomingGames.model';
-
+import { UpcomingGames } from '/Users/Tauqir/Desktop/footy-filter/src/app/team/upcomingGames.model'
 declare var $: any;
 let headers = new Headers({ 'X-Auth-Token': '14ce13ee90a64ddb9b2529c3a86c8415' });
 let options = new RequestOptions({ headers: headers });
@@ -20,6 +19,7 @@ export class LeagueTableComponent implements OnInit{
   //437
   constructor(private _http: Http) { }
   leagueName = "";
+  noGames = "";
 
   pushAll(arr, arr2){
       for(var i = 0; i < arr2.length; i++){
@@ -40,7 +40,7 @@ export class LeagueTableComponent implements OnInit{
   changeLeague(){
     let button = document.getElementById('btn').innerText;
     if(this.flag === false){
-      button = document.getElementById('btn').innerHTML = "CHANGE TO EPL"
+      button = document.getElementById('btn').innerHTML = "EPL LEAGUE TABLE"
       this._url = "http://api.football-data.org/v1/competitions/426/fixtures";
       this._http.get(this._url, options)
               .map((res: Response) => res.json())
@@ -49,13 +49,16 @@ export class LeagueTableComponent implements OnInit{
                     if(res.fixtures[i].status == "TIMED"){
                       let fulldate = res.fixtures[i].date;
                       let justDate = fulldate.split('T');
-                      let date = justDate[0];                      
+                      let date = justDate[0];
                       this.allUpcomingGames.push(new UpcomingGames(
                         res.fixtures[i].homeTeamName,
                         res.fixtures[i].awayTeamName,
                         res.fixtures[i].matchday,
                         date
                       ));
+                    }
+                    else if(this.allUpcomingGames == null){
+                      this.noGames = "No upcoming games available."
                     }
                 }
               });

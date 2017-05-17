@@ -78,13 +78,14 @@
           <div class="row">
                  <div class="card">
                      <div class="card-header" data-background-color="green">
-                         <h3 class="title"><strong>Upcoming</strong> Games</h3>                         
+                         <h3 class="title"><strong>Upcoming</strong> Games</h3>
                      </div>
-                     <div class="card-content" *ngFor="let games of allUpcomingGames">
-                       <p><i><small>{{games.date | date}},</small> <small>Match Day: {{games.matchday}}</small></i></p>
+                     <div class="card-content" *ngFor="let games of allUpcomingGames" id="games">
+                       <p><i><small>{{games.date | date}}</small></i></p>
                        {{games.teamName}}&nbsp; &nbsp;<b>VS</b> &nbsp;&nbsp;&nbsp;{{games.rival}}
                        <hr>
                      </div>
+                     <h3 id="nogames">{{noGames}}</h3>
                 </div>
              </div>
         </div>
